@@ -8,12 +8,10 @@ using Astro.
 This template requires the Deno runtime to be installed on your computer. If you
 haven't already, please
 [install Deno first](https://deno.land/manual/getting_started/installation).
-Next, initialize a new Astro project using this template with your favorite
-[npm client](https://docs.npmjs.com/cli/v9/configuring-npm/install), as
-described in the [Astro docs](https://docs.astro.build/en/getting-started/).
+Next, initialize a new Astro project using this template with Deno:
 
 ```
-npm create astro@latest -- --template denoland/deno-astro-template
+deno init --npm astro@latest -- --template denoland/deno-astro-template
 ```
 
 GitHub will also let you
@@ -33,7 +31,7 @@ This provides a few benefits:
 - The ability to run in production on [Deno Deploy](https://deno.com/deploy), a
   high performance, globally distributed platform for serverless JavaScript
   applications.
-- [Compatibility with the majority of packages on npm](https://deno.land/manual@v1.17.2/npm_nodejs/compatibility_mode),
+- [Compatibility with the majority of packages on npm](https://docs.deno.com/runtime/fundamentals/node/),
   both at the runtime level and via the Astro build process (thanks to Vite and
   esbuild).
 
@@ -41,23 +39,15 @@ This provides a few benefits:
 
 To use this template for local development, you will use npm scripts in
 `package.json` in the same way as described in the Astro documentation. However,
-these scripts are configured execute the same commands using the Deno runtime
+these scripts are configured to execute the same commands using the Deno runtime
 instead of Node.js.
 
-- Start the local development server with `npm start` or `npm run dev`
-- Build a production-ready SSR site with `npm run build`
-- After building, you can preview your SSR site locally with `npm run preview`
+- Start the local development server with `deno task dev`
+- Build a production-ready SSR site with `deno task build`
+- After building, you can preview your SSR site locally with `deno task preview`
 
 The template project lightly modifies the base Astro project with some basic
 CRUD operations to create additional resource links.
-
-## 🔌 Managing dependencies, integrations, and plugins
-
-We recommend **using npm to manage dependencies for this project**. Astro was
-designed to be used with npm, and enhanced with plugins and other tools also
-hosted on npm. Deno's Node/npm compatibility layer should be able to handle this
-just fine. If you run into any compatibility issues,
-[please let us know](https://github.com/denoland/deno/issues).
 
 ## 🗝️ Using Deno KV
 
@@ -115,7 +105,7 @@ new version of your application being pushed to production.
   [as described here](https://deno.com/deploy/docs/deployctl).
 - Create a new blank project at [dash.deno.com](https://dash.deno.com/projects)
   and note the generated project name
-- Build the Astro site locally with `npm run build`
+- Build the Astro site locally with `deno task build`
 - Deploy the newly generated site in the `dist` folder with this command:
 
 ```
